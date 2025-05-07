@@ -1,8 +1,15 @@
 import pdfplumber
 import nltk
+import os
 import re
 
-nltk.download('punkt')
+# Force NLTK to download 'punkt' to a local folder
+nltk_data_path = os.path.join(os.path.dirname(__file__), '..', 'nltk_data')
+nltk.download('punkt', download_dir=nltk_data_path)
+
+# Tell NLTK to use the local data path
+nltk.data.path.append(nltk_data_path)
+
 from nltk.tokenize import sent_tokenize
 
 def extract_sentences_from_pdf(file):
