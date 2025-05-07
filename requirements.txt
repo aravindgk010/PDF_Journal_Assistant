@@ -1,9 +1,9 @@
-streamlit
+streamlit>=1.25.0
+openai>=1.0.0
+python-dotenv
 pdfplumber
 nltk
-openai
+sentence-transformers
 python-docx
-python-dotenv
 pandas
 scikit-learn
-sentence-transformers
