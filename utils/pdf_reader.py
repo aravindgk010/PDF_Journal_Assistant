@@ -1,5 +1,5 @@
-import pdfplumber
-import spacy
+import pdfplumber # type: ignore
+import spacy # type: ignore
 import re
 
 # Load spaCy model (automatically downloads in cloud if in requirements.txt)
