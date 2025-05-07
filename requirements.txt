@@ -3,7 +3,9 @@ openai>=1.0.0
 python-dotenv
 pdfplumber
 nltk
-sentence-transformers
 python-docx
 pandas
 scikit-learn
+torch
+transformers
+sentence-transformers
