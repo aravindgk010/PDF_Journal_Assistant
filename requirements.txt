@@ -2,7 +2,6 @@ streamlit>=1.25.0
 openai>=1.0.0
 python-dotenv
 pdfplumber
-nltk
 python-docx
 pandas
 scikit-learn
