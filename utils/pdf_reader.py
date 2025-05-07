@@ -24,7 +24,7 @@ def extract_sentences_from_pdf(file):
     all_text = re.sub(r'\s+', ' ', all_text)
 
     # Sentence splitting
-    sentences = sent_tokenize(all_text)
+    sentences = sent_tokenize(all_text, language='english')
     
     # Optional: Filter out short or irrelevant sentences
     cleaned_sentences = [s.strip() for s in sentences if len(s.strip()) > 40]
