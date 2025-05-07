@@ -1,9 +1,18 @@
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer  #type: ignore
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import os
+import zipfile
+
+# Unzip the model if it doesn't already exist
+if not os.path.exists('local_model'):
+    with zipfile.ZipFile('local_model.zip', 'r') as zip_ref:
+        zip_ref.extractall('local_model')
+
+model = SentenceTransformer('local_model')
 
 # Load a compact model for speed
-model = SentenceTransformer('all-MiniLM-L6-v2')
+#model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def find_similar_sentences(query, sentences, top_n=10):
     if not sentences:
