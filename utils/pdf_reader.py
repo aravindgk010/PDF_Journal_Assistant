@@ -5,7 +5,7 @@ import re
 
 # Download punkt tokenizer (only downloads if not present)
 #nltk.download('punkt', quiet=True)
-nltk.data.path.append("./nltk_data")
+nltk.data.path.append("./nltk_data")  # Add custom NLTK data path if needed
 
 # 🐞 Debug: Show where NLTK is looking for data
 print("NLTK data paths:", nltk.data.path)
