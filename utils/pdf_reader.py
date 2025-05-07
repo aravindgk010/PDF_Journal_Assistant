@@ -3,12 +3,10 @@ import nltk
 import os
 import re
 
-# Force NLTK to download 'punkt' to a local folder
-nltk_data_path = os.path.join(os.path.dirname(__file__), '..', 'nltk_data')
-nltk.download('punkt', download_dir=nltk_data_path)
-
-# Tell NLTK to use the local data path
-nltk.data.path.append(nltk_data_path)
+# Ensure punkt is available
+nltk_path = os.path.join(os.getcwd(), "nltk_data")
+nltk.download("punkt", download_dir=nltk_path)
+nltk.data.path.append(nltk_path)
 
 from nltk.tokenize import sent_tokenize
 
