@@ -3,10 +3,9 @@ import nltk
 import os
 import re
 
-# Ensure punkt is available
-nltk_path = os.path.join(os.getcwd(), "nltk_data")
-nltk.download("punkt", download_dir=nltk_path)
-nltk.data.path.append(nltk_path)
+# Download punkt tokenizer (only downloads if not present)
+nltk.download('punkt', quiet=True)
+
 
 from nltk.tokenize import sent_tokenize
 
