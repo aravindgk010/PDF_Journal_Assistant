@@ -6,7 +6,10 @@ from utils.gpt_paraphrase import paraphrase_sentences
 import os
 from dotenv import load_dotenv
 import html
-  
+
+import nltk
+nltk.download('punkt')
+ 
 
 # Load API Key from .env
 load_dotenv()
