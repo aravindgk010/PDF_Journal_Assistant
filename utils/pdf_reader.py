@@ -4,7 +4,8 @@ import os
 import re
 
 # Download punkt tokenizer (only downloads if not present)
-nltk.download('punkt', quiet=True)
+#nltk.download('punkt', quiet=True)
+nltk.data.path.append("nltk_data")
 
 
 from nltk.tokenize import sent_tokenize
