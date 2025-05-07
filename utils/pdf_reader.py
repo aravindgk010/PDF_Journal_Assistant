@@ -1,16 +1,9 @@
 import pdfplumber
-import nltk
-import os
+import spacy
 import re
 
-# Download punkt tokenizer (only downloads if not present)
-#nltk.download('punkt', quiet=True)
-nltk.data.path.append("./nltk_data")  # Add custom NLTK data path if needed
-
-# 🐞 Debug: Show where NLTK is looking for data
-print("NLTK data paths:", nltk.data.path)
-
-from nltk.tokenize import sent_tokenize
+# Load spaCy model (automatically downloads in cloud if in requirements.txt)
+nlp = spacy.load("en_core_web_sm")
 
 def extract_sentences_from_pdf(file):
     all_text = ""
@@ -23,10 +16,8 @@ def extract_sentences_from_pdf(file):
     # Basic cleaning
     all_text = re.sub(r'\s+', ' ', all_text)
 
-    # Sentence splitting
-    sentences = sent_tokenize(all_text, language='english')
-    
-    # Optional: Filter out short or irrelevant sentences
-    cleaned_sentences = [s.strip() for s in sentences if len(s.strip()) > 40]
+    # Sentence splitting using spaCy
+    doc = nlp(all_text)
+    sentences = [sent.text.strip() for sent in doc.sents if len(sent.text.strip()) > 40]
 
-    return cleaned_sentences
+    return sentences
